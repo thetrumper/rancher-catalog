@@ -1,0 +1,31 @@
+version: '2'
+services:
+  mysql:
+      image: 'mysql:5.7.21'
+      volumes:
+        - 'db_data:/bookstack'
+      environment:
+        - MYSQL_ROOT_PASSWORD=${db_root_password}
+        - MYSQL_USER=${db_user}
+        - MYSQL_PASSWORD=${db_user_password}
+        - MYSQL_DATABASE=${db_database_name}
+  Bookstack:
+      image: 'solidnerd/bookstack:0.24.2'
+      volumes:
+        - 'bookstack:/bookstack'
+      depends_on:
+        - mysql
+      environment:
+        - DB_DATABASE=${db_database_name}
+        - DB_USERNAME=${db_user} 
+        - DB_PASSWORD=${db_user_password}       
+        - DB_HOST=${db_host}
+  bookstack-lb:
+    image: rancher/lb-service-haproxy:v0.7.5
+    ports:
+      - ${public_port}:${public_port}
+volumes:
+  db_data:
+    driver: ${volume_driver}
+  bookstack_data:
+    driver: ${volume_driver}
