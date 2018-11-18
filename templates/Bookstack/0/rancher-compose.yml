@@ -38,7 +38,7 @@ catalog:
       type: "string"
     - variable: db_host
       description: "Bookstack database host"
-      label: "WordPress application username"
+      label: "Bookstack database"
       required: true
       default: "mysql:3306"
       type: "string"
