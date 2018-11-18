@@ -1,0 +1,81 @@
+version: '2'
+catalog:
+  name: "Bookstack"
+  version: "v0.1 Catalog"
+  description: "Note taking tool using library structure with shelves, books, chapters, and pages."
+  uuid: Bookstack-1
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: public_port
+      description: "public port to access the WordPress site"
+      label: "Public Port"
+      required: true
+      default: "80"
+      type: "int"
+    - variable: db_root_password
+      description: "Mysql root password, set on first run"
+      label: "MySQL Root Password"
+      required: true
+      default: "4r5t^Y&U"
+      type: "string"
+    - variable: db_user
+      description: "MySQL database user, created on first run"
+      label: "MySQL Database User"
+      required: true
+      default: "bookstack_user"
+      type: "string"
+    - variable: db_user_password
+      description: "MariaDB database user password, set on first run"
+      label: "MySQL Database User Password"
+      required: true
+      default: "4r5t^Y&U"
+      type: "string"
+    - variable: db_database_name
+      description: "Bookstack database name"
+      label: "Bookstack database name"
+      required: true
+      default: "bookstack"
+      type: "string"
+    - variable: db_host
+      description: "Bookstack database host"
+      label: "WordPress application username"
+      required: true
+      default: "mysql:3306"
+      type: "string"
+    - variable: volume_driver
+      description: "Volume driver to use with this service"
+      label: "Volume driver"
+      required: true
+      default: "local"
+      type: enum
+      options:
+        - local
+        - rancher-nfs
+        - rancher-efs
+        - rancher-ebs
+services:
+  bookstack-lb:
+    scale: 1
+    lb_config:
+      certs: []
+      port_rules:
+      - protocol: http
+        service: bookstack
+        source_port: ${public_port}
+        target_port: 80
+    health_check:
+      response_timeout: 2000
+      healthy_threshold: 2
+      interval: 2000
+      port: 42
+      unhealthy_threshold: 3
+  bookstack:
+    scale: 1
+    retain_ip: true
+    health_check:
+      port: 80
+      interval: 5000
+      unhealthy_threshold: 3
+      request_line: 'GET / HTTP/1.0'
+      healthy_threshold: 2
+      response_timeout: 5000
