@@ -1,5 +1,5 @@
-name: WordPress
+name: Bookstack
 description: |
-  Blog tool, publishing platform and CMS
-version: v0.2-bitnami
-category: Blogging
+  Note-taking tool organized in a library structure, with shelves, books, chapters, and pages.
+version: v0.1 catalog
+category: Notes
