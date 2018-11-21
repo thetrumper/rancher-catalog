@@ -75,7 +75,7 @@ services:
       certs: []
       port_rules:
       - protocol: http
-        service: bookstack
+        service: monica
         source_port: ${public_port}
         target_port: 80
     health_check:
