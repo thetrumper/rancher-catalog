@@ -64,7 +64,7 @@ catalog:
         - production
     - variable: app_disable_signup
       description: "Disable Signup?"
-      label: "App Environment"
+      label: "Disable Signup"
       required: true
       default: true
       type: boolean
