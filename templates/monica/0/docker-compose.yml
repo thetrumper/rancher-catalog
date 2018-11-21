@@ -9,7 +9,7 @@ services:
         - MYSQL_USER=${db_user}
         - MYSQL_PASSWORD=${db_user_password}
         - MYSQL_DATABASE=${db_database_name}
-  MonicaHQ:
+  monica:
       image: 'monicahq/monicahq'
       volumes:
         - 'MonicaHQ:/MonicaHQ'
