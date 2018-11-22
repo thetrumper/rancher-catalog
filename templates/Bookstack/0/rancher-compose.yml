@@ -36,12 +36,6 @@ catalog:
       required: true
       default: "bookstack"
       type: "string"
-    - variable: db_host
-      description: "Bookstack database host"
-      label: "Bookstack database"
-      required: true
-      default: "mysql:3306"
-      type: "string"
     - variable: volume_driver
       description: "Volume driver to use with this service"
       label: "Volume driver"

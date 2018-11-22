@@ -12,7 +12,7 @@ services:
   monica:
       image: 'monicahq/monicahq'
       volumes:
-        - 'MonicaHQ:/MonicaHQ'
+        - 'MonicaHQ_data:/MonicaHQ'
       links:
         - mysql
       environment:
@@ -33,14 +33,14 @@ services:
         - APP_URL=$_SERVER['HTTP_HOST']
         - DB_USE_UTF8MB4=true
         - MAIL_DRIVER=smtp
-        - MAIL_HOST=mailtrap.io
-        - MAIL_PORT=2525
-        - MAIL_USERNAME=null
-        - MAIL_PASSWORD=null
-        - MAIL_ENCRYPTION=null
-        - MAIL_FROM_ADDRESS=ValidEmailAddress
-        - MAIL_FROM_NAME="Some Name"
-        - APP_EMAIL_NEW_USERS_NOTIFICATION=EmailThatWillSendNotificationsForNewUser
+        - MAIL_HOST=${MAIL_HOST}
+        - MAIL_PORT=${MAIL_PORT}
+        - MAIL_USERNAME=${MAIL_USERNAME}
+        - MAIL_PASSWORD=${MAIL_PASSWORD}
+        - MAIL_ENCRYPTION=${MAIL_ENCRYPTION}
+        - MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS}
+        - MAIL_FROM_NAME=${MAIL_FROM_NAME}
+        - APP_EMAIL_NEW_USERS_NOTIFICATION=${APP_EMAIL_NEW_USERS_NOTIFICATION}
         - APP_DEFAULT_LOCALE=en
         - APP_DISABLE_SIGNUP=${app_disable_signup}
         - APP_SIGNUP_DOUBLE_OPTIN=false

@@ -62,6 +62,52 @@ catalog:
       required: true
       default: true
       type: boolean
+    - variable: MAIL_HOST
+      label: SMTP Host
+      description: |
+        hostname of the smtp server used for sending mails
+      required: true
+      type: string
+      default: "mailtrap.io"
+    - variable: MAIL_PORT
+      label: SMTP Port
+      required: false
+      type: int
+      default: 2525
+    - variable: MAIL_USERNAME
+      label: smtp username
+      required: false
+      type: string
+      default: null
+    - variable: MAIL_PASSWORD
+      label: SMTP Password
+      required: false
+      type: string
+      default: null
+    - variable: MAIL_ENCRYPTION
+      label: Use encryption
+      required: false
+      type: enum
+      options:
+        - tls
+        - ssl
+        - null
+      default: null
+    - variable: MAIL_FROM_ADDRESS
+      label: Mail From Address
+      required: false
+      type: string
+      default: ValidEmailAddress
+    - variable: MAIL_FROM_NAME
+      label: Mail From Name
+      required: false
+      type: string
+      default: "Some Name"
+    - variable: APP_EMAIL_NEW_USERS_NOTIFICATION
+      label: Email that will recieve notifications from Monica
+      type: string
+      required: false
+      default: "someemailthatdoesntexist"
 services:
   monica-lb:
     scale: 1

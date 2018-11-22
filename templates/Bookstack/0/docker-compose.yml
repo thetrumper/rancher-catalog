@@ -12,14 +12,14 @@ services:
   bookstack:
       image: 'solidnerd/bookstack:0.24.2'
       volumes:
-        - 'bookstack:/bookstack'
-      depends_on:
+        - 'bookstack_data:/bookstack'
+      links:
         - mysql
       environment:
         - DB_DATABASE=${db_database_name}
-        - DB_USERNAME=${db_user} 
-        - DB_PASSWORD=${db_user_password}       
-        - DB_HOST=${db_host}
+        - DB_USERNAME=${db_user}
+        - DB_PASSWORD=${db_user_password}
+        - DB_HOST=mysql:3306
   bookstack-lb:
     image: rancher/lb-service-haproxy:v0.7.5
     ports:
