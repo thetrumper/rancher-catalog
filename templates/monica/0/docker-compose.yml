@@ -22,13 +22,13 @@ services:
         - DB_HOST=mysql
         - DB_PORT=3306
         - APP_ENV=${app_env}
-        - APP_DEBUG=false
+        - APP_DEBUG=true
         - CACHE_DRIVER=database
         - SESSION_DRIVER=file
         - SESSION_LIFETIME=120
         - QUEUE_DRIVER=sync
-        - APP_KEY=gjlvf0rqKM)AVZkGGHao&!0(6anutx%w
-        - HASH_SALT=Ceakge2eey20+Keyr12g4h
+        - APP_KEY=gjlvf0rqKM5AVZkGGHaoxr0f6anutxtw
+        - HASH_SALT=Ceakge2eey20rKeyr12g4h
         - HASH_LENGTH=18
         - APP_URL=$_SERVER['HTTP_HOST']
         - DB_USE_UTF8MB4=true
