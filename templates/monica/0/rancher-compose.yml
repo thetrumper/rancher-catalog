@@ -40,7 +40,7 @@ catalog:
       description: "MonicaHQ database host"
       label: "MonicaHQ database"
       required: true
-      default: "mysql:3306"
+      default: "mysql"
       type: "string"
     - variable: volume_driver
       description: "Volume driver to use with this service"
