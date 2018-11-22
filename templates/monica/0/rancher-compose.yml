@@ -68,12 +68,12 @@ catalog:
         hostname of the smtp server used for sending mails
       required: true
       type: string
-      default: "mailtrap.io"
+      default: "smtp.gmail.com"
     - variable: MAIL_PORT
       label: SMTP Port
       required: false
       type: int
-      default: 2525
+      default: 465
     - variable: MAIL_USERNAME
       label: smtp username
       required: false
@@ -92,7 +92,7 @@ catalog:
         - tls
         - ssl
         - null
-      default: null
+      default: ssl
     - variable: MAIL_FROM_ADDRESS
       label: Mail From Address
       required: false
