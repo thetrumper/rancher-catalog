@@ -36,12 +36,6 @@ catalog:
       required: true
       default: "monica"
       type: "string"
-    - variable: db_host
-      description: "MonicaHQ database host"
-      label: "MonicaHQ database"
-      required: true
-      default: "mysql"
-      type: "string"
     - variable: volume_driver
       description: "Volume driver to use with this service"
       label: "Volume driver"
