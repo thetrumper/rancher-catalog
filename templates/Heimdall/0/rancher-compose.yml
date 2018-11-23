@@ -30,7 +30,7 @@ services:
       certs: []
       port_rules:
       - protocol: http
-        service: bookstack
+        service: heimdall
         source_port: ${public_port}
         target_port: 80
     health_check:
