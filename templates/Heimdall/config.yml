@@ -1,0 +1,5 @@
+name: Heimdall
+description: |
+  Application dashboard for use as a frontend to multiple web apps.
+version: v0.1 catalog
+category: Dashboard
