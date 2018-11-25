@@ -1,9 +1,9 @@
 version: '2'
 catalog:
-  name: "3CX"
+  name: "3CXPBX"
   version: "v0.1 Catalog"
-  description: "PBX System"
-  uuid: 3CX-1
+  description: "PBX PHONE SYSTEM"
+  uuid: 3CXPBX-1
   minimum_rancher_version: v0.51.0
   questions:
     - variable: volume_driver
@@ -24,7 +24,7 @@ services:
       interval: 2000
       port: 42
       unhealthy_threshold: 3
-  3CX:
+  3CXPBX:
     scale: 1
     retain_ip: true
     health_check:

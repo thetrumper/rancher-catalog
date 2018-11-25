@@ -1,6 +1,6 @@
 version: '2'
 services:
-  3CX:
+  3CXPBX:
       image: 'farfui/3cx:15.5'
       volumes:
         - 3cx_backup:/mnt/backup
