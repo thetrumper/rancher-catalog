@@ -1,10 +1,10 @@
 version: '2'
 catalog:
   name: "3CXPBX"
-  version: "v0.1 Catalog"
+  version: "v0.2 catalog"
   description: "PBX PHONE SYSTEM"
   uuid: 3CXPBX-1
-  minimum_rancher_version: v0.51.0
+  minimum_rancher_version: v0.50.0
   questions:
     - variable: volume_driver
       description: "Volume driver to use with this service"
