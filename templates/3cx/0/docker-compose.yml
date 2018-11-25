@@ -7,16 +7,6 @@ services:
         - 3cx_recordings:/mnt/recordings
         - 3cx_log:/var/log
         - 3cx_sys:/sys/fs/cgroup:ro
-      ports:
-        - "5001:5001"
-        - "5015:5015"
-        - "5060:5060"
-        - "5060:5060/udp"
-        - "5061:5061"
-        - "5061:5061/udp"
-        - "5090:5090"
-        - "5090:5090/udp"
-        - "9000-10999:9000-10999/udp"
       cap_add:
         - SYS_ADMIN
 volumes:
