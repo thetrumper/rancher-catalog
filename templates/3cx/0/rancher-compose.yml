@@ -18,12 +18,6 @@ catalog:
         - rancher-efs
         - rancher-ebs
 services:
-    health_check:
-      response_timeout: 2000
-      healthy_threshold: 2
-      interval: 2000
-      port: 42
-      unhealthy_threshold: 3
   3CXPBX:
     scale: 1
     retain_ip: true
