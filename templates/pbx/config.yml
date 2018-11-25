@@ -1,5 +1,5 @@
-name: PBX
+name: 3CX
 description: |
-  PBX System
-version: v0.1 catalog
-category: Phone
+  PBX System for managing phone calls and such
+version: v0.1 Catalog
+category: PBX
