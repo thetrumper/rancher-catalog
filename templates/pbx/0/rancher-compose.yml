@@ -3,7 +3,7 @@ catalog:
   name: "PBX"
   version: "v0.1 Catalog"
   description: "PBX System"
-  uuid: Heimdall-1
+  uuid: PBX-1
   minimum_rancher_version: v0.51.0
   questions:
     - variable: volume_driver
