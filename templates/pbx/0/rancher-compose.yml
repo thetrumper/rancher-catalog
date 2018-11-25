@@ -1,6 +1,6 @@
 version: '2'
 catalog:
-  name: "3CX"
+  name: "PBX"
   version: "v0.1 Catalog"
   description: "PBX System"
   uuid: Heimdall-1
